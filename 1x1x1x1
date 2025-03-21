@@ -1,0 +1,1054 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Name = Instance.new("TextLabel")
+local Credits = Instance.new("TextLabel")
+local ball = Instance.new("TextButton")
+local noclip = Instance.new("TextButton")
+local fakelag = Instance.new("TextButton")
+local plane = Instance.new("TextButton")
+local destroychat = Instance.new("TextButton")
+local sit = Instance.new("TextButton")
+local fly = Instance.new("TextButton")
+local tp = Instance.new("TextButton")
+local message = Instance.new("TextButton")
+local floatingpad = Instance.new("TextButton")
+local r6 = Instance.new("TextButton")
+local c00lgui = Instance.new("TextButton")
+local rejoin = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(-0.0196145065, 168, 0.642360091, -215)
+Frame.Size = UDim2.new(0, 417, 0, 280)
+
+Name.Name = "Name"
+Name.Parent = Frame
+Name.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Name.Size = UDim2.new(0, 417, 0, 25)
+Name.Font = Enum.Font.GothamBold
+Name.Text = "1x1x1x1 Gui FE"
+Name.TextColor3 = Color3.fromRGB(0, 0, 0)
+Name.TextScaled = true
+Name.TextSize = 14.000
+Name.TextWrapped = true
+
+Credits.Name = "Credits"
+Credits.Parent = Frame
+Credits.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Credits.Position = UDim2.new(3.65918211e-08, 0, 0.911999941, 0)
+Credits.Size = UDim2.new(0, 416, 0, 22)
+Credits.Font = Enum.Font.GothamBold
+Credits.Text = "By FishNoobAhh"
+Credits.TextColor3 = Color3.fromRGB(0, 0, 0)
+Credits.TextScaled = true
+Credits.TextSize = 14.000
+Credits.TextWrapped = true
+
+ball.Name = "ball"
+ball.Parent = Frame
+ball.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ball.Position = UDim2.new(0.0511240065, 0, 0.154811308, 0)
+ball.Size = UDim2.new(0, 79, 0, 31)
+ball.Font = Enum.Font.GothamBold
+ball.Text = "become ball"
+ball.TextColor3 = Color3.fromRGB(0, 0, 0)
+ball.TextScaled = true
+ball.TextSize = 14.000
+ball.TextWrapped = true
+
+noclip.Name = "noclip"
+noclip.Parent = Frame
+noclip.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+noclip.Position = UDim2.new(0.0511240065, 0, 0.308153421, 0)
+noclip.Size = UDim2.new(0, 79, 0, 31)
+noclip.Font = Enum.Font.GothamBold
+noclip.Text = "noclip"
+noclip.TextColor3 = Color3.fromRGB(0, 0, 0)
+noclip.TextScaled = true
+noclip.TextSize = 14.000
+noclip.TextWrapped = true
+
+fakelag.Name = "fakelag"
+fakelag.Parent = Frame
+fakelag.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+fakelag.Position = UDim2.new(0.0511240065, 0, 0.454681605, 0)
+fakelag.Size = UDim2.new(0, 79, 0, 34)
+fakelag.Font = Enum.Font.GothamBold
+fakelag.Text = "fe fake lag"
+fakelag.TextColor3 = Color3.fromRGB(0, 0, 0)
+fakelag.TextScaled = true
+fakelag.TextSize = 14.000
+fakelag.TextWrapped = true
+fakelag.MouseButton1Down:Connect(function()
+	while true do
+		game.Players.LocalPlayer.Character.Torso.Anchored = true
+		game.Players.LocalPlayer.Character.Humanoid.Jump = true
+		wait(0.1)
+		game.Players.LocalPlayer.Character.Torso.Anchored = false
+		game.Players.LocalPlayer.Character.Humanoid.Sit = true
+		wait(0.1)
+	end
+end)
+plane.Name = "plane"
+plane.Parent = Frame
+plane.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+plane.Position = UDim2.new(0.386630774, 0, 0.154811308, 0)
+plane.Size = UDim2.new(0, 83, 0, 31)
+plane.Font = Enum.Font.GothamBold
+plane.Text = "become a plane"
+plane.TextColor3 = Color3.fromRGB(0, 0, 0)
+plane.TextScaled = true
+plane.TextSize = 14.000
+plane.TextWrapped = true
+
+destroychat.Name = "destroy chat"
+destroychat.Parent = Frame
+destroychat.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+destroychat.Position = UDim2.new(0.391426951, 0, 0.308153421, 0)
+destroychat.Size = UDim2.new(0, 83, 0, 31)
+destroychat.Font = Enum.Font.GothamBold
+destroychat.Text = "destroy chat fe (op warning)"
+destroychat.TextColor3 = Color3.fromRGB(0, 0, 0)
+destroychat.TextScaled = true
+destroychat.TextSize = 14.000
+destroychat.TextWrapped = true
+destroychat.MouseButton1Down:Connect(function()
+	for i = 1, 4 do
+		local args = {
+			[1] = "\194\160\194\160",
+			[2] = "All"
+		}
+
+		game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+	end
+end)
+sit.Name = "sit"
+sit.Parent = Frame
+sit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+sit.Position = UDim2.new(0.391426951, 0, 0.457778603, 0)
+sit.Size = UDim2.new(0, 83, 0, 34)
+sit.Font = Enum.Font.GothamBold
+sit.Text = "sit"
+sit.TextColor3 = Color3.fromRGB(0, 0, 0)
+sit.TextScaled = true
+sit.TextSize = 14.000
+sit.TextWrapped = true
+sit.MouseButton1Down:Connect(function()
+	local human = kevyn.Parent:findFirstChild("Humanoid")
+	if (human ~= nil)then
+		human.Sit=true
+	end
+end)
+fly.Name = "fly"
+fly.Parent = Frame
+fly.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+fly.Position = UDim2.new(0.723578513, 0, 0.154811308, 0)
+fly.Size = UDim2.new(0, 89, 0, 31)
+fly.Font = Enum.Font.GothamBold
+fly.Text = "fly"
+fly.TextColor3 = Color3.fromRGB(0, 0, 0)
+fly.TextScaled = true
+fly.TextSize = 14.000
+fly.TextWrapped = true
+
+tp.Name = "tp"
+tp.Parent = Frame
+tp.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+tp.Position = UDim2.new(0.723578513, 0, 0.308153421, 0)
+tp.Size = UDim2.new(0, 89, 0, 31)
+tp.Font = Enum.Font.GothamBold
+tp.Text = "click to tp"
+tp.TextColor3 = Color3.fromRGB(0, 0, 0)
+tp.TextScaled = true
+tp.TextSize = 14.000
+tp.TextWrapped = true
+
+message.Name = "message"
+message.Parent = Frame
+message.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+message.Position = UDim2.new(0.723578513, 0, 0.457778603, 0)
+message.Size = UDim2.new(0, 89, 0, 34)
+message.Font = Enum.Font.GothamBold
+message.Text = "messages"
+message.TextColor3 = Color3.fromRGB(0, 0, 0)
+message.TextScaled = true
+message.TextSize = 14.000
+message.TextWrapped = true
+message.MouseButton1Down:Connect(function()
+	while true do
+		wait(2)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: MUHAWHAWHAW!! I HAVE RETURNED FOR MY REVENGE!!", "ALL")
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: NOW YOU WILL ALL PARISH IN MY FIRE OF DOOM!!", "ALL")
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: I WILL DESTR0Y YOU ALL! YOU ARE HATERS!", "ALL")
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: YOU WILL NOT LIVE THROUGH MY DEADLY ATTACKS!!", "ALL")
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: I MIGHT AS WELL CLONE YOU INTO BOTS!!", "ALL")
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: AND THEN THOSE BOTS WILL DESTROY ROBLOX! HAHAHAHAHA!!", "ALL")
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("1x1x1x1: YOU CAN'T STOP ME! THERES NOTHING YOU CAN DO!!", "ALL")
+		wait(2)
+	end
+end)
+
+floatingpad.Name = "floatingpad"
+floatingpad.Parent = Frame
+floatingpad.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+floatingpad.Position = UDim2.new(0.0511240065, 0, 0.620496035, 0)
+floatingpad.Size = UDim2.new(0, 79, 0, 34)
+floatingpad.Font = Enum.Font.GothamBold
+floatingpad.Text = "floating pad (requires r6)"
+floatingpad.TextColor3 = Color3.fromRGB(0, 0, 0)
+floatingpad.TextScaled = true
+floatingpad.TextSize = 14.000
+floatingpad.TextWrapped = true
+
+r6.Name = "r6"
+r6.Parent = Frame
+r6.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+r6.Position = UDim2.new(0.393903613, 0, 0.620496035, 0)
+r6.Size = UDim2.new(0, 79, 0, 34)
+r6.Font = Enum.Font.GothamBold
+r6.Text = "r15 to r6"
+r6.TextColor3 = Color3.fromRGB(0, 0, 0)
+r6.TextScaled = true
+r6.TextSize = 14.000
+r6.TextWrapped = true
+r6.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/jHGVauVX'),true))()
+end)
+c00lgui.Name = "c00lgui"
+c00lgui.Parent = Frame
+c00lgui.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+c00lgui.Position = UDim2.new(0.723578513, 0, 0.620496035, 0)
+c00lgui.Size = UDim2.new(0, 88, 0, 34)
+c00lgui.Font = Enum.Font.GothamBold
+c00lgui.Text = "fe c00lgui"
+c00lgui.TextColor3 = Color3.fromRGB(0, 0, 0)
+c00lgui.TextScaled = true
+c00lgui.TextSize = 14.000
+c00lgui.TextWrapped = true
+c00lgui.MouseButton1Down:Connect(function()
+loadstring(game:GetObjects("rbxassetid://9827584846")[1].Source)()
+end)
+rejoin.Name = "rejoin"
+rejoin.Parent = Frame
+rejoin.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+rejoin.Position = UDim2.new(0.0511240065, 0, 0.76692462, 0)
+rejoin.Size = UDim2.new(0, 79, 0, 34)
+rejoin.Font = Enum.Font.GothamBold
+rejoin.Text = "rejoin"
+rejoin.TextColor3 = Color3.fromRGB(0, 0, 0)
+rejoin.TextScaled = true
+rejoin.TextSize = 14.000
+rejoin.TextWrapped = true
+rejoin.MouseButton1Down:Connect(function()
+	local player = game.Players.LocalPlayer
+	local gamePlaceId = game.PlaceId
+	local teleportService = game:GetService("TeleportService")
+	teleportService:Teleport(gamePlaceId, player)
+end)
+
+-- Scripts:
+
+local function WVDQ_fake_script() -- ball.LocalScript 
+	local script = Instance.new('LocalScript', ball)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local UserInputService = game:GetService("UserInputService")
+		local RunService = game:GetService("RunService")
+		local Camera = workspace.CurrentCamera
+	
+		local SPEED_MULTIPLIER = 30
+		local JUMP_POWER = 60
+		local JUMP_GAP = 0.3
+	
+		local character = game.Players.LocalPlayer.Character
+	
+		for i,v in ipairs(character:GetDescendants()) do
+			if v:IsA("BasePart") then
+				v.CanCollide = false
+			end
+		end
+	
+		local ball = character.HumanoidRootPart
+		ball.Shape = Enum.PartType.Ball
+		ball.Size = Vector3.new(5,5,5)
+		local humanoid = character:WaitForChild("Humanoid")
+		local params = RaycastParams.new()
+		params.FilterType = Enum.RaycastFilterType.Blacklist
+		params.FilterDescendantsInstances = {character}
+	
+		local tc = RunService.RenderStepped:Connect(function(delta)
+			ball.CanCollide = true
+			humanoid.PlatformStand = true
+			if UserInputService:GetFocusedTextBox() then return end
+			if UserInputService:IsKeyDown("W") then
+				ball.RotVelocity -= Camera.CFrame.RightVector * delta * SPEED_MULTIPLIER
+			end
+			if UserInputService:IsKeyDown("A") then
+				ball.RotVelocity -= Camera.CFrame.LookVector * delta * SPEED_MULTIPLIER
+			end
+			if UserInputService:IsKeyDown("S") then
+				ball.RotVelocity += Camera.CFrame.RightVector * delta * SPEED_MULTIPLIER
+			end
+			if UserInputService:IsKeyDown("D") then
+				ball.RotVelocity += Camera.CFrame.LookVector * delta * SPEED_MULTIPLIER
+			end
+			--ball.RotVelocity = ball.RotVelocity - Vector3.new(0,ball.RotVelocity.Y/50,0)
+		end)
+	
+		UserInputService.JumpRequest:Connect(function()
+			local result = workspace:Raycast(
+				ball.Position,
+				Vector3.new(
+					0,
+					-((ball.Size.Y/2)+JUMP_GAP),
+					0
+				),
+				params
+			)
+			if result then
+				ball.Velocity = ball.Velocity + Vector3.new(0,JUMP_POWER,0)
+			end
+		end)
+	
+		Camera.CameraSubject = ball
+		humanoid.Died:Connect(function() tc:Disconnect() end)
+	end)
+end
+coroutine.wrap(WVDQ_fake_script)()
+local function UUBW_fake_script() -- noclip.LocalScript 
+	local script = Instance.new('LocalScript', noclip)
+
+	local noClipEnabled = false
+	
+	
+	--Toggle noclipButton
+	
+	script.parent.MouseButton1Click:Connect(function()
+		noClipEnabled = not noClipEnabled
+		script.Parent.Text = noClipEnabled and "No-Clip: ON" or "No-Clip: OFF"
+		if noClipEnabled then
+			-- Enable Button
+			game:GetService("RunService").Stepped:Connect(function()
+				if noClipEnabled then
+					for _, part in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+						if part:IsA("BasePart") and part.CanCollide then
+							part.CanCollide = false
+						end
+					end
+				end
+			end)
+		else
+			--Disable noclipButton
+			for _, part in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if part:IsA("BasePart") then
+					part.CanCollide = true
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(UUBW_fake_script)()
+local function JLHA_fake_script() -- plane.LocalScript 
+	local script = Instance.new('LocalScript', plane)
+
+	function click()
+	repeat wait() until game:IsLoaded() and game:service("Players").LocalPlayer.Character ~= nil;
+	wait(0.4) 
+	for i, v in pairs(game:service("Players").LocalPlayer.Character:children()) do 
+	if v ~= script then 
+	v:Destroy() 
+	end 
+	end 
+	
+	local player = game:service("Players").LocalPlayer
+	local mouse = player:GetMouse() 
+	local cam = workspace.CurrentCamera 
+	local char = player.Character 
+	local Torsoz = char:findFirstChild("Torso") 
+	local NV = Vector3.new() 
+	local Main 
+	local W,S = false,false 
+	local DoublePress = {nil,0} 
+	script.Parent = char 
+	
+	local TrailParts = {} 
+	local Acceleration = 0.08 
+	local Speed = 0 
+	local MinSpeed = 0 
+	local MaxSpeed = 3.2 
+	local DesiredDirection = cam.CoordinateFrame.lookVector 
+	local Direction = DesiredDirection 
+	local Roll = 0 
+	local AllowTrails = true 
+	
+	script.Name = "AdvFlight" 
+	
+	local P = Instance.new("Part") 
+	P.Anchored = true 
+	P.CanCollide = false 
+	P.Name = "Part" 
+	P.formFactor = "Custom" 
+	P.Size = Vector3.new(0.2,0.2,0.2) 
+	P.Locked = true 
+	P.TopSurface = 10 
+	P.BottomSurface = 10 
+	P.FrontSurface = 10 
+	P.BackSurface = 10 
+	P.LeftSurface = 10 
+	P.RightSurface = 10 
+	P.Material = "Pebble" 
+	P.BrickColor = BrickColor.new("White") 
+	
+	local shipp 
+	local shadow 
+	local campart 
+	
+	function RAY(pos, dir, startpos, endpos, distleft, collidedlist) 
+	collidedlist = collidedlist or {char} 
+	startpos = startpos or pos 
+	distleft = distleft or dir.unit * dir.magnitude 
+	endpos = endpos or pos + distleft 
+	local ray = Ray.new(pos, distleft) 
+	local hitz,enz = workspace:FindPartOnRayWithIgnoreList(ray, collidedlist) 
+	if hitz ~= nil then 
+	if hitz.CanCollide == false then 
+	table.insert(collidedlist, hitz) 
+	local newpos = enz 
+	local newdistleft = distleft - (dir.unit * (pos - newpos).magnitude) 
+	if newdistleft ~= NV then 
+	return RAY(newpos-(dir*0.01), dir, startpos, endpos, newdistleft+(dir*0.01), collidedlist) 
+	end 
+	end 
+	end 
+	return hitz, enz, ray 
+	end 
+	
+	function FindSurface(part, position) 
+	local obj = part.CFrame:pointToObjectSpace(position) 
+	local siz = part.Size/2 
+	for i,v in pairs(Enum.NormalId:GetEnumItems()) do 
+	local vec = Vector3.FromNormalId(v) 
+	local wvec = part.CFrame:vectorToWorldSpace(vec) 
+	local vz = (obj)/(siz*vec) 
+	if (math.abs(vz.X-1) < 0.01 or math.abs(vz.Y-1) < 0.01 or math.abs(vz.Z-1) < 0.01) then
+	return wvec,vec 
+	end 
+	end 
+	if part.className == "WedgePart" then 
+	return part.CFrame:vectorToWorldSpace(Vector3.new(0,0.707,-0.707)), Vector3.new(0,0.707,-0.707) 
+	end 
+	end 
+	
+	function HSV(H,S,V) 
+	H = H % 360 
+	local C = V * S 
+	local H2 = H/60 
+	local X = C * (1 - math.abs((H2 %2) -1)) 
+	local color = Color3.new(0,0,0) 
+	if H2 <= 0 then 
+	color = Color3.new(C,0,0) 
+	elseif 0 <= H2 and H2 <= 1 then 
+	color = Color3.new(C,X,0) 
+	elseif 1 <= H2 and H2 <= 2 then 
+	color = Color3.new(X,C,0) 
+	elseif 2 <= H2 and H2 <= 3 then 
+	color = Color3.new(0,C,X) 
+	elseif 3 <= H2 and H2 <= 4 then 
+	color = Color3.new(0,X,C) 
+	elseif 4 <= H2 and H2 <= 5 then 
+	color = Color3.new(X,0,C) 
+	elseif 5 <= H2 and H2 <= 6 then 
+	color = Color3.new(C,0,X) 
+	end 
+	local m = V - C
+	return Color3.new(color.r + m, color.g + m, color.b + m) 
+	end 
+	
+	function Build(shiptype) 
+	AllowTrails = true 
+	for i, v in pairs(char:children()) do 
+	if v.className == "Model" and v.Name == "Ship" then 
+	v:remove() 
+	end 
+	end 
+	for i, v in pairs(TrailParts) do 
+	for _,V in pairs(v[3]) do 
+	V:Destroy() 
+	end 
+	end 
+	local mdl = Instance.new("Model", char) 
+	mdl.Name = "Ship" 
+	
+	------------------------ Speeder Ship Type -----------------------------
+	if shiptype == "Speeder" then 
+	
+	shipp = P:Clone() 
+	shipp.Parent = mdl 
+	shipp.Size = Vector3.new(1,1,2.2) 
+	local shipwing1 = P:Clone() 
+	shipwing1.Parent = mdl 
+	shipwing1.Size = Vector3.new(0.6,1.2,2) 
+	local mesh = Instance.new("SpecialMesh", shipwing1) 
+	mesh.MeshType = "Wedge" 
+	local shipwing2 = shipwing1:Clone() 
+	shipwing2.Parent = mdl 
+	campart = P:Clone() 
+	campart.Transparency = 1 
+	local shipwing21 = P:Clone() 
+	shipwing21.Parent = mdl 
+	shipwing21.Size = Vector3.new(0.32,1.1,2.6) 
+	local mesh = Instance.new("SpecialMesh", shipwing21) 
+	mesh.MeshType = "Wedge" 
+	local shipwing22 = shipwing21:Clone() 
+	shipwing22.Parent = mdl 
+	campart = P:Clone() 
+	campart.Transparency = 1 
+	
+	local shipwi = P:Clone() 
+	shipwi.Parent = mdl 
+	shipwi.Size = Vector3.new(1,1,1.2) 
+	local mesh = Instance.new("SpecialMesh", shipwi) 
+	mesh.MeshType = "Wedge" 
+	local shipwi2 = P:Clone() 
+	shipwi2.Parent = mdl 
+	shipwi2.Size = Vector3.new(0.7,0.7,0.84) 
+	shipwi2.Material = "SmoothPlastic" 
+	shipwi2.BrickColor = BrickColor.new("Pastel blue") 
+	shipwi2.Reflectance = 0.6 
+	local mesh = Instance.new("SpecialMesh", shipwi2) 
+	mesh.MeshType = "Wedge" 
+	
+	shadow = P:Clone() 
+	shadow.Parent = mdl 
+	shadow.Name = "Shadow" 
+	shadow.Material = "SmoothPlastic" 
+	shadow.BrickColor = BrickColor.new("Really black") 
+	local mesh = Instance.new("SpecialMesh",shadow) 
+	mesh.MeshType = "Sphere" 
+	
+	TrailParts = {} 
+	table.insert(TrailParts,{shipp,1,{},cam.CoordinateFrame.p,CFrame.new(0,0,1),0.5,18}) 
+	table.insert(TrailParts,{shipwing1,1,{},cam.CoordinateFrame.p,CFrame.new(0,0.45,1),0.3,15}) 
+	table.insert(TrailParts,{shipwing2,1,{},cam.CoordinateFrame.p,CFrame.new(0,0.45,1),0.3,15}) 
+	for _, V in pairs(TrailParts) do 
+	for i = 1, V[7] do 
+	local p = P:Clone() 
+	local mesh = Instance.new("SpecialMesh", p) 
+	mesh.MeshId = "http://www.roblox.com/asset/?id=9856898" 
+	mesh.TextureId = "http://www.roblox.com/asset/?id=48358980" 
+	p.BrickColor = BrickColor.new("Dark stone grey") 
+	table.insert(V[3],p) 
+	end 
+	end 
+	
+	function ReposParts() 
+	shipwing1.CFrame = shipp.CFrame * CFrame.new(-1.1,-0.195,-0.14) * CFrame.Angles(0,0,math.pi/2) 
+	shipwing2.CFrame = shipp.CFrame * CFrame.new(1.1,-0.195,-0.14) * CFrame.Angles(0,0,-math.pi/2) 
+	shipwing21.CFrame = shipp.CFrame * CFrame.new(-1.05,-0.34,-0.45) * CFrame.Angles(0,0,math.pi/2) 
+	shipwing22.CFrame = shipp.CFrame * CFrame.new(1.05,-0.34,-0.45) * CFrame.Angles(0,0,-math.pi/2) 
+	shipwi.CFrame = shipp.CFrame * CFrame.new(0,0,-1.7) 
+	shipwi2.CFrame = shipwi.CFrame * CFrame.new(0,0.015,-0.015) 
+	campart.CFrame = shipp.CFrame + Vector3.new(0,1.5,0) 
+	end 
+	cam.CameraSubject = campart 
+	cam.CameraType = "Track" 
+	
+	shipp.CFrame = CFrame.new(NV,Direction) + cam.CoordinateFrame.p 
+	ReposParts() 
+	
+	end 
+	
+	AllowTrails = true 
+	end 
+	Build("Speeder") 
+	
+	function B1D() 
+	Build("Speeder") 
+	end 
+	
+	function RollThatSht(direc) 
+	if Roll == 0 then 
+	for i = 1, 50 do 
+	Roll = (-360 + math.cos(math.pi/50*i) * 360) * direc 
+	wait(0.02) 
+	end 
+	Roll = 0 
+	end 
+	end 
+	
+	function KD(key) 
+	if key == "w" then 
+	W = true 
+	elseif key == "s" then 
+	S = true 
+	end 
+	
+	local rollpls = 0 
+	if key == DoublePress[1] and tick() - DoublePress[2] < 0.32 then 
+	DoublePress = {nil,0} 
+	if key == "a" then 
+	rollpls = -1 
+	elseif key == "d" then 
+	rollpls = 1 
+	end 
+	end 
+	
+	DoublePress = {key,tick()} 
+	if rollpls ~= 0 then 
+	RollThatSht(rollpls) 
+	end 
+	end 
+	
+	function KU(key) 
+	if key == "w" then 
+	W = false 
+	elseif key == "s" then 
+	S = false 
+	end 
+	end 
+	
+	function Equip() 
+	end 
+	
+	function Unequip() 
+	end 
+	
+	mouse.Icon = "rbxasset://textures\\GunCursor.png" 
+	mouse.Button1Down:connect(B1D) 
+	mouse.KeyDown:connect(KD) 
+	mouse.KeyUp:connect(KU) 
+	
+	
+	
+	local count = 0 
+	local hue = 0 
+	--game:GetService("RunService").Stepped:connect(function() 
+	while wait(0.02) do 
+	
+	------ Speed --------
+	local valu = (0.002*MaxSpeed) + ((Speed/MaxSpeed)*Acceleration)
+	if W == true then 
+	Speed = Speed + valu 
+	elseif S == true then 
+	Speed = Speed - valu 
+	end 
+	if Speed > MaxSpeed then 
+	Speed = MaxSpeed 
+	elseif Speed < MinSpeed then 
+	Speed = MinSpeed 
+	end 
+	
+	------ left/right tilt ---------
+	local target = 180 + math.floor(math.deg(math.atan2(DesiredDirection.x,DesiredDirection.z))) 
+	local current = 180 + math.floor(math.deg(math.atan2(Direction.x,Direction.z))) 
+	local swing = 0 
+	if math.abs(math.abs(current-target) - 360) > math.abs(target-current) then 
+	swing = target-current 
+	else 
+	swing = (current > target and -(math.abs(current-target) - 360)) or (current < target and math.abs(current-target) - 360) 
+	end 
+	
+	DesiredDirection = cam.CoordinateFrame.lookVector 
+	------ direction smoothening ------ 
+	local dir = DesiredDirection.unit 
+	if Direction ~= dir then 
+	if (Direction - dir).magnitude < 0.01 then 
+	Direction = dir 
+	else 
+	local dist = ((dir - Direction).unit * (dir - Direction).magnitude) /10 
+	Direction = (Direction + dist).unit 
+	end 
+	end 
+	
+	shipp.CFrame = (CFrame.new(NV,Direction) + shipp.Position + (Direction.unit * Speed)) * CFrame.Angles(0,0,math.rad(Roll) + math.rad(swing/2)) 
+	ReposParts() 
+	
+	------ shadow ------
+	local ghitz, genz = RAY(shipp.Position,Vector3.new(0,-26,0)) 
+	local angles = CFrame.new() 
+	if ghitz ~= nil and ghitz.className ~= "Terrain" and ((ghitz.className == "Part" and ghitz.Shape == Enum.PartType.Block) or (ghitz.className ~= "Part" and ghitz:IsA("BasePart"))) then 
+	local wvec,vec = FindSurface(ghitz,genz) 
+	angles = CFrame.new(NV,wvec) * CFrame.Angles(-math.pi/2,0,0) 
+	elseif ghitz ~= nil and (ghitz.className == "Part" and ghitz.Shape == Enum.PartType.Ball) then 
+	angles = (CFrame.new(ghitz.Position, genz) - ghitz.Position) * CFrame.Angles(-math.pi/2,0,0) 
+	end 
+	shadow.CFrame = CFrame.new(genz) * angles 
+	shadow.Transparency = 0.5 + (((shipp.Position - genz).magnitude /26)*0.5)
+	shadow.Mesh.Scale = (Vector3.new(4.4,0.25,4.4) * 5) * (1-(shipp.Position - genz).magnitude /26)
+	
+	------- Trails ----------------------- 
+	if AllowTrails == true then 
+	count = (count+1)%1 
+	hue = (hue+1) % 360
+	local rgb = HSV(hue,0.65,0.85) 
+	for _,v in pairs(TrailParts) do 
+	local to = (v[1].CFrame * v[5]).p
+	if Speed > MinSpeed + 0.2 then 
+	v[2] = (v[2]%#v[3]) + 1 
+	v[3][v[2]].CFrame = CFrame.new((v[4] + to)/2,to) * CFrame.Angles(math.pi/2,math.rad(Roll) + math.rad(swing/2),0) 
+	v[3][v[2]].Mesh.Scale = Vector3.new(v[6],(v[4] - to).magnitude*2,v[6]) 
+	v[3][v[2]].Mesh.VertexColor = Vector3.new(rgb.r,rgb.g,rgb.b) 
+	v[3][v[2]].Transparency = 0.15 
+	v[3][v[2]].Parent = game.Players.LocalPlayer.Character
+	else 
+	v[2] = (v[2]%#v[3]) + 1 
+	v[3][v[2]].Parent = nil 
+	end 
+	
+	v[4] = to 
+	end 
+	end 
+	
+	end 
+	--end) 
+	
+	-- 138098590 -- plane destroyed sound 
+	-- 133082569 -- propeller 2 
+	-- 135645246 -- propeller 1 
+	--[[ Possible Game names 
+	Aeroscape
+	Airbound
+	Aerialtude
+	]]
+	end
+	
+	script.Parent.MouseButton1Down:connect(click)
+end
+coroutine.wrap(JLHA_fake_script)()
+local function SSWSNG_fake_script() -- fly.LocalScript 
+	local script = Instance.new('LocalScript', fly)
+
+	speeds = 1
+	
+	local speaker = game:GetService("Players").LocalPlayer
+	
+	local chr = game.Players.LocalPlayer.Character
+	local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+	
+	nowe = false
+	
+	
+	script.parent.MouseButton1Down:connect(function()
+	
+		if nowe == true then
+			nowe = false
+	
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,true)
+			speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+		else 
+			nowe = true
+	
+	
+	
+			for i = 1, speeds do
+				spawn(function()
+	
+					local hb = game:GetService("RunService").Heartbeat	
+	
+	
+					tpwalking = true
+					local chr = game.Players.LocalPlayer.Character
+					local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+					while tpwalking and hb:Wait() and chr and hum and hum.Parent do
+						if hum.MoveDirection.Magnitude > 0 then
+							chr:TranslateBy(hum.MoveDirection)
+						end
+					end
+	
+				end)
+			end
+			game.Players.LocalPlayer.Character.Animate.Disabled = true
+			local Char = game.Players.LocalPlayer.Character
+			local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+	
+			for i,v in next, Hum:GetPlayingAnimationTracks() do
+				v:AdjustSpeed(0)
+			end
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,false)
+			speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+		end
+	
+	
+	
+	
+		if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+	
+	
+	
+			local plr = game.Players.LocalPlayer
+			local torso = plr.Character.Torso
+			local flying = true
+			local deb = true
+			local ctrl = {f = 0, b = 0, l = 0, r = 0}
+			local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+			local maxspeed = 50
+			local speed = 0
+	
+	
+			local bg = Instance.new("BodyGyro", torso)
+			bg.P = 9e4
+			bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+			bg.cframe = torso.CFrame
+			local bv = Instance.new("BodyVelocity", torso)
+			bv.velocity = Vector3.new(0,0.1,0)
+			bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+			if nowe == true then
+				plr.Character.Humanoid.PlatformStand = true
+			end
+			while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
+				game:GetService("RunService").RenderStepped:Wait()
+	
+				if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+					speed = speed+.5+(speed/maxspeed)
+					if speed > maxspeed then
+						speed = maxspeed
+					end
+				elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+					speed = speed-1
+					if speed < 0 then
+						speed = 0
+					end
+				end
+				if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+					bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+					lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+				elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+					bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+				else
+					bv.velocity = Vector3.new(0,0,0)
+				end
+				--	game.Players.LocalPlayer.Character.Animate.Disabled = true
+				bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+			end
+			ctrl = {f = 0, b = 0, l = 0, r = 0}
+			lastctrl = {f = 0, b = 0, l = 0, r = 0}
+			speed = 0
+			bg:Destroy()
+			bv:Destroy()
+			plr.Character.Humanoid.PlatformStand = false
+			game.Players.LocalPlayer.Character.Animate.Disabled = false
+			tpwalking = false
+	
+	
+	
+	
+		else
+			local plr = game.Players.LocalPlayer
+			local UpperTorso = plr.Character.UpperTorso
+			local flying = true
+			local deb = true
+			local ctrl = {f = 0, b = 0, l = 0, r = 0}
+			local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+			local maxspeed = 50
+			local speed = 0
+	
+	
+			local bg = Instance.new("BodyGyro", UpperTorso)
+			bg.P = 9e4
+			bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+			bg.cframe = UpperTorso.CFrame
+			local bv = Instance.new("BodyVelocity", UpperTorso)
+			bv.velocity = Vector3.new(0,0.1,0)
+			bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+			if nowe == true then
+				plr.Character.Humanoid.PlatformStand = true
+			end
+			while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
+				wait()
+	
+				if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+					speed = speed+.5+(speed/maxspeed)
+					if speed > maxspeed then
+						speed = maxspeed
+					end
+				elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+					speed = speed-1
+					if speed < 0 then
+						speed = 0
+					end
+				end
+				if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+					bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+					lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+				elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+					bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+				else
+					bv.velocity = Vector3.new(0,0,0)
+				end
+	
+				bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+			end
+			ctrl = {f = 0, b = 0, l = 0, r = 0}
+			lastctrl = {f = 0, b = 0, l = 0, r = 0}
+			speed = 0
+			bg:Destroy()
+			bv:Destroy()
+			plr.Character.Humanoid.PlatformStand = false
+			game.Players.LocalPlayer.Character.Animate.Disabled = false
+			tpwalking = false
+	
+	
+	
+		end
+	
+	
+	
+	
+	
+	end)
+	
+	local tis
+end
+coroutine.wrap(SSWSNG_fake_script)()
+local function GYRIVDI_fake_script() -- tp.LocalScript 
+	local script = Instance.new('LocalScript', tp)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		mouse = game.Players.LocalPlayer:GetMouse()
+		tool = Instance.new("Tool")
+		tool.RequiresHandle = false
+		tool.Name = "Click Teleport"
+		tool.Activated:connect(function()
+			local pos = mouse.Hit+Vector3.new(0,2.5,0)
+			pos = CFrame.new(pos.X,pos.Y,pos.Z)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+		end)
+		tool.Parent = game.Players.LocalPlayer.Backpack
+	end)
+end
+coroutine.wrap(GYRIVDI_fake_script)()
+local function BCBQLZ_fake_script() -- floatingpad.LocalScript 
+	local script = Instance.new('LocalScript', floatingpad)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local name = game.Players.LocalPlayer.Name
+	
+		local p = Instance.new("Part")
+		p.Parent = workspace
+		p.Locked = true
+		p.Color = Color3.new(0.666667, 0, 0)
+		p.Size = Vector3.new(8, 1.2, 8)
+		p.Anchored = true
+		local m = Instance.new("CylinderMesh")
+		m.Scale = Vector3.new(1, 0.5, 1)
+		m.Parent = p
+		while true do
+			p.CFrame = CFrame.new(game.Players:findFirstChild(name).Character.Torso.CFrame.x, game.Players:findFirstChild(name).Character.Torso.CFrame.y - 4, game.Players:findFirstChild(name).Character.Torso.CFrame.z)
+			wait()
+		end
+	end)
+end
+coroutine.wrap(BCBQLZ_fake_script)()
+local function KXYQAXQ_fake_script() -- Frame.UIDrag 
+	local script = Instance.new('LocalScript', Frame)
+
+	-- Made by Real_IceyDev (@lceyDex) --
+	-- Simple UI dragger (PC Only/Any device that has a mouse) --
+	
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end
+coroutine.wrap(KXYQAXQ_fake_script)()
+local function GEVXYR_fake_script() -- ScreenGui.notfication 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	wait(2)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "now loaded lol";
+		Text = "By FishNoobAhh";
+		Icon = "";
+		Duration = 10; 
+		Button1 = "yes sirrr";
+	})
+end
+coroutine.wrap(GEVXYR_fake_script)()
+local function PYIQX_fake_script() -- ScreenGui.messageload 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	if script.Parent.Enabled == true then
+		local m = Instance.new("Message", game.Workspace)
+		m.Text = "1x1x1x1 gui fe Loading..."
+		wait(2)
+		m:Destroy()
+		script:Destroy()
+	else
+	
+	end
+end
+coroutine.wrap(PYIQX_fake_script)()
